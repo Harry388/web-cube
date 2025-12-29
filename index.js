@@ -353,7 +353,6 @@ function setupRotationInput(input, label) {
 
     input.addEventListener("input", function() {
         updateRotationInputUI(input.value, label);
-        draw();
     });
 }
 
@@ -386,37 +385,34 @@ let lastTime = 0;
 function animate(time) {
     const delta = time - lastTime;
     lastTime = time;
-    if (!runInput.checked) {
-        requestAnimationFrame(animate);
-        return;
-    }
-    if (animateXZInput.checked) {
-        stepInputValue(rotateXZInput, delta);
-        updateRotationInputUI(rotateXZInput.value, rotateXZDegreeLabel);
-    }
-    if (animateYZInput.checked) {
-        stepInputValue(rotateYZInput, delta);
-        updateRotationInputUI(rotateYZInput.value, rotateYZDegreeLabel);
-    }
-    if (animateXYInput.checked) {
-        stepInputValue(rotateXYInput, delta);
-        updateRotationInputUI(rotateXYInput.value, rotateXYDegreeLabel);
-    }
-    if (animateWXInput.checked) {
-        stepInputValue(rotateWXInput, delta);
-        updateRotationInputUI(rotateWXInput.value, rotateWXDegreeLabel);
-    }
-    if (animateWYInput.checked) {
-        stepInputValue(rotateWYInput, delta);
-        updateRotationInputUI(rotateWYInput.value, rotateWYDegreeLabel);
-    }
-    if (animateWZInput.checked) {
-        stepInputValue(rotateWZInput, delta);
-        updateRotationInputUI(rotateWZInput.value, rotateWZDegreeLabel);
+    if (runInput.checked) {
+        if (animateXZInput.checked) {
+            stepInputValue(rotateXZInput, delta);
+            updateRotationInputUI(rotateXZInput.value, rotateXZDegreeLabel);
+        }
+        if (animateYZInput.checked) {
+            stepInputValue(rotateYZInput, delta);
+            updateRotationInputUI(rotateYZInput.value, rotateYZDegreeLabel);
+        }
+        if (animateXYInput.checked) {
+            stepInputValue(rotateXYInput, delta);
+            updateRotationInputUI(rotateXYInput.value, rotateXYDegreeLabel);
+        }
+        if (animateWXInput.checked) {
+            stepInputValue(rotateWXInput, delta);
+            updateRotationInputUI(rotateWXInput.value, rotateWXDegreeLabel);
+        }
+        if (animateWYInput.checked) {
+            stepInputValue(rotateWYInput, delta);
+            updateRotationInputUI(rotateWYInput.value, rotateWYDegreeLabel);
+        }
+        if (animateWZInput.checked) {
+            stepInputValue(rotateWZInput, delta);
+            updateRotationInputUI(rotateWZInput.value, rotateWZDegreeLabel);
+        }
     }
     draw();
     requestAnimationFrame(animate);
 }
 
-draw();
 requestAnimationFrame(animate);
