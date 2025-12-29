@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube</title>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <input type="checkbox" id="animate-xz" checked />
+    <input type="range" id="rotate-xz" value="0" />
+    <label for="rotate-xz">Rotate XZ <span id="rotate-xz-degree-label">0</span></label>
+    <br />
+    <input type="checkbox" id="animate-yz" />
+    <input type="range" id="rotate-yz" value="0" />
+    <label for="rotate-yz">Rotate YZ <span id="rotate-yz-degree-label">0</span></label>
+    <br />
+    <input type="checkbox" id="animate-xy" />
+    <input type="range" id="rotate-xy" value="0" />
+    <label for="rotate-xy">Rotate XY <span id="rotate-xy-degree-label">0</span></label>
+    <br />
+    <input type="checkbox" id="run" checked />
+    <label for="run">Run</label>
+    <br />
+    <canvas id="canvas" />
+</body>
+
+</html>
